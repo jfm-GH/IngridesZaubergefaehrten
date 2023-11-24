@@ -32,7 +32,7 @@
             <button class="modal-navigation-btn left" @click="goToPreviousImage" >&#10094;</button>
             <button class="modal-navigation-btn right" @click="goToNextImage" >&#10095;</button>
             <!-- Share button -->
-            <button class="btn btn-primary mt-2" @click="shareImage">Share</button>
+            <button class="btn btn-primary mt-2" @click="shareImage">Teilen</button>
           </div>
         </div>
       </div>
@@ -91,12 +91,12 @@ export default {
           title: this.currentImage.caption,
           url: this.currentImage.path,
         }).then(() => {
-          console.log('Thanks for sharing!');
+          console.log('Thanks für\'s teilen!');
         })
         .catch(console.error);
       } else {
         // Fallback for browsers that do not support the Web Share API
-        alert('Web Share API is not supported in your browser.');
+        alert('Ihr Browser unterstützt das teilen via Web Share API nicht.');
       }
     },
   }
