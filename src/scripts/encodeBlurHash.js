@@ -41,7 +41,7 @@ async function generateBlurHashes() {
       }
     })
   );
-  
+
   console.log('Finished generating BlurHashes. Writing to file...');
 
   // Custom stringification to avoid quotes around variable names
