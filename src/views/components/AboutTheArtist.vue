@@ -6,13 +6,12 @@
         </div>
 
         <div class="artist-info">
-          <!-- add image later 
+
           <img
-            src="../../assets/img/artist-photo.jpg"
+            src="@/assets/img/carousel-1.jpg"
             class="avatar avatar-lg mb-3"
             alt="artist"
           />
-          -->
           <h5 class="card-subtitle mb-2 text-muted">Ingride Mateen</h5>
           <p class="text-s text-secondary mb-2">Email: <a href="mailto:IngrideTheArtist@gmail.com">IngrideTheArtist@gmail.com</a></p>
           <p class="text-s text-secondary mb-2">Telefon: <a href="tel:+49176123456">123-456-7890</a></p>

@@ -12,7 +12,7 @@
       <div class="col-lg-8 col-md-12">
         <div class="row gy-4">
           <div class="col-sm-6 col-md-4" v-for="(image, index) in galleryImages" :key="index">
-            <gallery-image :imagePath="image.path" :alt="image.alt" :caption="image.caption" @click="setCurrentImage(image)" />
+            <gallery-image :imagePath="image.path" :blurHash="image.blurHash" :alt="image.alt" :caption="image.caption" @click="setCurrentImage(image)" />
           </div>
         </div>
       </div>
@@ -38,7 +38,6 @@
       </div>
     </div>
   </div>
-
 
 </template>
 
@@ -96,7 +95,7 @@ export default {
         .catch(console.error);
       } else {
         // Fallback for browsers that do not support the Web Share API
-        alert('Ihr Browser unterstützt das teilen via Web Share API nicht.');
+        alert('Ihr Browser unterstützt das Teilen via Web Share API nicht.');
       }
     },
   }

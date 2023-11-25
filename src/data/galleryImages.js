@@ -13,56 +13,67 @@ import img11 from "@/assets/img/gallery-images/20231110_145749.jpg"
 const galleryImages = [
     {
       path: img1,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 1",
       caption: "caption 1"
     },
     {
       path: img2,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 2",
       caption: "caption 2"
     },
     {
       path: img3,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 3",
       caption: "caption 3"
     },
     {
       path: img4,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 4",
       caption: "caption 4"
     },
     {
       path: img5,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 5",
       caption: "caption 5"
     },
     {
       path: img6,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 6",
       caption: "caption 6"
     },
     {
       path: img7,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 7",
       caption: "caption 7"
     },
     {
       path: img8,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 8",
       caption: "caption 8"
     },
     {
       path: img9,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 9",
       caption: "caption 9"
     },
     {
       path: img10,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 10",
       caption: "caption 10"
     },
     {
       path: img11,
+      blurHash: "U99tH6kQEnRW00t8MvIoyGs;%3NXwgWnNyn+",
       alt: "image 11",
       caption: "caption 11"
     },
