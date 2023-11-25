@@ -45,7 +45,7 @@
 <script>
 import AboutTheArtist from "./components/AboutTheArtist.vue";
 import GalleryImage from "./components/GalleryImage.vue";
-import galleryImages from "@/data/updatedGalleryImages.js"
+import galleryImages from "@/data/updatedGalleryImages-cjs.js"
 import * as bootstrap from 'bootstrap';
 import { nextTick } from 'vue';
 

@@ -1,9 +1,18 @@
-const { encode } = require('blurhash');
-const { loadImage, createCanvas } = require('canvas');
-const fs = require('fs');
-const path = require('path');
+import { encode } from 'blurhash';
+import { loadImage, createCanvas } from 'canvas';
+import fs from 'fs';
+import path from 'path';
+import galleryImages from '../data/galleryImages-cjs.js';
 
-const galleryImages = require('../data/galleryImages.js');
+/*
+function getCurrentDirectory(importMetaUrl) {
+  if (typeof __dirname !== 'undefined') {
+    return __dirname;
+  } else {
+    return path.dirname(new URL(importMetaUrl).pathname);
+  }
+}
+*/
 
 async function encodeImageToBlurhash(imagePath) {
   try {
@@ -36,7 +45,7 @@ async function generateBlurHashes() {
         return { path: importName, blurHash, alt: img.alt, caption: img.caption };
       } else {
         // Use existing data if blurHash is already present
-        return { ...img, path: importName };
+        return Object.assign({}, img, { path: importName });
       }
     })
   );
@@ -49,11 +58,11 @@ async function generateBlurHashes() {
   }).join(',\n');
 
   const fileContent = `${importStatements}\n\nconst galleryImages = [\n${galleryImagesString}\n];\n\nexport default galleryImages;`;
+  const currentDirectory = __dirname;
+  //const currentDirectory = getCurrentDirectory(import.meta.url);
+  const filePath = path.join(currentDirectory, '../data/updatedGalleryImages.js');
 
-  fs.writeFileSync(
-    path.join(__dirname, '../data/updatedGalleryImages.js'),
-    fileContent
-  );
+  fs.writeFileSync(filePath, fileContent);
   console.log('Updated gallery images file has been written successfully.');
 }
 

@@ -5,6 +5,9 @@
   "description": "This is about the simplest template you can get for uibuilder.",
   "browser": "./src/index.js",
   "scripts": {
+    "transpile-script": "babel src/scripts/encodeBlurHash.js --out-file src/scripts/encodeBlurHash-cjs.js && babel src/data/galleryImages.js --out-file src/data/galleryImages-cjs.js",
+    "prebuild": "npm run transpile-script && node src/scripts/encodeBlurHash-cjs.js",
+    "preserve": "npm run transpile-script && node src/scripts/encodeBlurHash-cjs.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -44,6 +47,9 @@
     "vuex": "4.0.2"
   },
   "devDependencies": {
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.3",
+    "@babel/preset-env": "^7.23.3",
     "@types/bootstrap": "^5.2.10",
     "@vue/cli-plugin-babel": "4.5.0",
     "@vue/cli-plugin-eslint": "4.5.0",
@@ -51,6 +57,7 @@
     "@vue/cli-service": "4.5.0",
     "@vue/compiler-sfc": "3.2.0",
     "@vue/eslint-config-prettier": "6.0.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "10.1.0",
     "eslint": "6.7.2",
     "eslint-plugin-prettier": "3.3.1",
