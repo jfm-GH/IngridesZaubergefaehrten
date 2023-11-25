@@ -1,6 +1,9 @@
 const { encode } = require('blurhash');
-const path = require('path');
 const { loadImage, createCanvas } = require('canvas');
+const fs = require('fs');
+const path = require('path');
+
+const galleryImages = require('@/data/galleryImages.js'); // Update the path to your galleryImages.js
 
 async function encodeImageToBlurhash(imagePath) {
   try {
@@ -10,14 +13,25 @@ async function encodeImageToBlurhash(imagePath) {
     ctx.drawImage(image, 0, 0);
 
     const imageData = ctx.getImageData(0, 0, image.width, image.height);
-    const blurhash = encode(imageData.data, imageData.width, imageData.height, 4, 4);
-    return blurhash;
+    return encode(imageData.data, imageData.width, imageData.height, 4, 4);
   } catch (error) {
     console.error('Error encoding image:', error);
+    return null;
   }
 }
 
-// Example usage
-encodeImageToBlurhash(path.join(__dirname, '/carousel-1.jpg')).then(blurhash => {
-  console.log('BlurHash:', blurhash);
-});
+async function generateBlurHashes() {
+  const updatedGalleryImages = await Promise.all(
+    galleryImages.map(async (img) => {
+      const blurHash = await encodeImageToBlurhash(path.join(__dirname, img.path));
+      return { ...img, blurHash };
+    })
+  );
+
+  fs.writeFileSync(
+    path.join(__dirname, '../data/updatedGalleryImages.js'), // Update the output file path
+    `module.exports = ${JSON.stringify(updatedGalleryImages, null, 2)};`
+  );
+}
+
+generateBlurHashes();

@@ -1,4 +1,16 @@
-import img1 from "@/assets/img/gallery-images/20231108_190940.jpg"
+const img1 = "@/assets/img/gallery-images/20231108_190940.jpg"
+const img2 = "@/assets/img/gallery-images/20231108_191105.jpg"
+const img3 = "@/assets/img/gallery-images/20231108_191248.jpg"
+const img4 = "@/assets/img/gallery-images/20231108_191340.jpg"
+const img5 = "@/assets/img/gallery-images/20231110_143443.jpg"
+const img6 = "@/assets/img/gallery-images/20231110_143926.jpg"
+const img7 = "@/assets/img/gallery-images/20231110_144523.jpg"
+const img8 = "@/assets/img/gallery-images/20231110_144720.jpg"
+const img9 = "@/assets/img/gallery-images/20231110_145031.jpg"
+const img10 = "@/assets/img/gallery-images/20231110_145506.jpg"
+const img11 = "@/assets/img/gallery-images/20231110_145749.jpg"
+
+/*
 import img2 from "@/assets/img/gallery-images/20231108_191105.jpg"
 import img3 from "@/assets/img/gallery-images/20231108_191248.jpg"
 import img4 from "@/assets/img/gallery-images/20231108_191340.jpg"
@@ -9,6 +21,7 @@ import img8 from "@/assets/img/gallery-images/20231110_144720.jpg"
 import img9 from "@/assets/img/gallery-images/20231110_145031.jpg"
 import img10 from "@/assets/img/gallery-images/20231110_145506.jpg"
 import img11 from "@/assets/img/gallery-images/20231110_145749.jpg"
+*/
 
 const galleryImages = [
     {
