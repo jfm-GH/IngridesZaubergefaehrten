@@ -7,11 +7,10 @@
 
         <div class="artist-info">
 
-          <img
-            src="@/assets/img/carousel-1.jpg"
-            class="avatar avatar-lg mb-3"
-            alt="artist"
-          />
+          <div v-if="image">
+            <gallery-image :imagePath="image.path" :blurHash="image.blurHash" :alt="image.alt" :caption="image.caption" />
+          </div>
+
           <h5 class="card-subtitle mb-2 text-muted">Ingride Mateen</h5>
           <p class="text-s text-secondary mb-2">Email: <a href="mailto:IngrideTheArtist@gmail.com">IngrideTheArtist@gmail.com</a></p>
           <p class="text-s text-secondary mb-2">Telefon: <a href="tel:+49176123456">123-456-7890</a></p>
@@ -27,8 +26,20 @@
   </template>
   
   <script>
+
+  import GalleryImage from "./GalleryImage.vue";
+
   export default {
-    name: "artist-card",
+    name: "AboutTheArtist",
+    props: {
+      image: {
+        type: Object,
+        default: () => {},
+      }
+    },
+    components: {
+      GalleryImage
+    },
   };
   </script>
   

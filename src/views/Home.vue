@@ -5,13 +5,13 @@
       <!-- Artist Info Wrapper -->
       <div class="col-lg-4 col-md-12 artist-wrapper">
         <div class="about-artist-sticky">
-          <about-the-artist />
+          <about-the-artist :image="filteredArtistImage"/>
         </div>
       </div>
       <!-- Gallery section -->
       <div class="col-lg-8 col-md-12">
         <div class="row gy-4">
-          <div class="col-sm-6 col-md-4" v-for="(image, index) in galleryImages" :key="index">
+          <div class="col-sm-6 col-md-4" v-for="(image, index) in filteredGalleryImages" :key="index">
             <gallery-image :imagePath="image.path" :blurHash="image.blurHash" :alt="image.alt" :caption="image.caption" @click="setCurrentImage(image)" />
           </div>
         </div>
@@ -45,7 +45,7 @@
 <script>
 import AboutTheArtist from "./components/AboutTheArtist.vue";
 import GalleryImage from "./components/GalleryImage.vue";
-import galleryImages from "@/data/updatedGalleryImages.js"
+import images from "@/data/updatedImages.js"
 import * as bootstrap from 'bootstrap';
 import { nextTick } from 'vue';
 
@@ -59,10 +59,19 @@ export default {
   },
   data() {
     return {
-      galleryImages: galleryImages,
+      galleryImages: images,
       currentImage: null,
       currentImageIndex: null,
     };
+  },
+  computed: {
+    filteredGalleryImages() {
+      return this.galleryImages.filter(image => image.category === 'gallery');
+    },
+    filteredArtistImage() {
+      const filteredImages = this.galleryImages.filter(image => image.category === 'AboutTheArtist');
+      return filteredImages.length > 0 ? filteredImages[0] : null; // Return the first image or null if none found
+    },
   },
   methods: {
     setCurrentImage(image) {

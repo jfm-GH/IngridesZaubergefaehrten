@@ -5,8 +5,9 @@
   "description": "This is about the simplest template you can get for uibuilder.",
   "browser": "./src/index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "encode-blur-hash": "node ./src/scripts/encodeBlurHash.js",
+    "serve": "node ./src/scripts/reminderMsg-prebuild.js && vue-cli-service serve",
+    "build": "node ./src/scripts/reminderMsg-prebuild.js && vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "keywords": [

@@ -3,7 +3,7 @@ const { loadImage, createCanvas } = require('canvas');
 const fs = require('fs');
 const path = require('path');
 
-const galleryImages = require('../data/galleryImages.js');
+const galleryImages = require('../data/images.js');
 
 async function encodeImageToBlurhash(imagePath) {
   try {
@@ -15,7 +15,8 @@ async function encodeImageToBlurhash(imagePath) {
 
     const imageData = ctx.getImageData(0, 0, image.width, image.height);
     const blurHash = encode(imageData.data, imageData.width, imageData.height, 4, 4);
-    console.log(`Encoded image: ${imagePath} -> BlurHash: ${blurHash}`);
+    console.log(`\x1b[33mEncoded image: ${imagePath} -> BlurHash: ${blurHash}\x1b[0m`);
+    console.log('\x1b[44m\x1b[37mIMPORTANT:\x1b[0m \x1b[1mPlease update this BlurHash in images.js file.\x1b[0m');
     return blurHash;
   } catch (error) {
     console.error(`Error encoding image ${imagePath}:`, error);
@@ -33,7 +34,7 @@ async function generateBlurHashes() {
 
       if (!img.blurHash || img.blurHash.trim() === '') {
         const blurHash = await encodeImageToBlurhash(path.join(__dirname, img.path.replace('@', '../src')));
-        return { path: importName, blurHash, alt: img.alt, caption: img.caption };
+        return { path: importName, blurHash, alt: img.alt, caption: img.caption, category: img.category };
       } else {
         // Use existing data if blurHash is already present
         return { ...img, path: importName };
@@ -45,13 +46,13 @@ async function generateBlurHashes() {
 
   // Custom stringification to avoid quotes around variable names
   const galleryImagesString = updatedGalleryImages.map(img => {
-    return `{\n    path: ${img.path},\n    blurHash: "${img.blurHash}",\n    alt: "${img.alt}",\n    caption: "${img.caption}"\n  }`;
+    return `{\n    path: ${img.path},\n    blurHash: "${img.blurHash}",\n    alt: "${img.alt}",\n    caption: "${img.caption}",\n    category: "${img.category}"\n  }`;
   }).join(',\n');
 
-  const fileContent = `${importStatements}\n\nconst galleryImages = [\n${galleryImagesString}\n];\n\nexport default galleryImages;`;
+  const fileContent = `${importStatements}\n\nconst images = [\n${galleryImagesString}\n];\n\nexport default images;`;
 
   fs.writeFileSync(
-    path.join(__dirname, '../data/updatedGalleryImages.js'),
+    path.join(__dirname, '../data/updatedImages.js'),
     fileContent
   );
   console.log('Updated gallery images file has been written successfully.');
