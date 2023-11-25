@@ -1,15 +1,21 @@
 <template>
+  
+  <div class="mb-2">
+      <splash-card />
+  </div>
+  
   <div class="py-4 container-fluid">
+    
     <!-- Main row -->
     <div class="row">
       <!-- Artist Info Wrapper -->
-      <div class="col-lg-4 col-md-12 artist-wrapper">
-        <div class="about-artist-sticky">
+      <div class="col-lg-6 col-md-12 artist-wrapper">
+        <div class="about-artist-sticky ">
           <about-the-artist :image="filteredArtistImage" />
         </div>
       </div>
       <!-- Gallery section -->
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-6 col-md-12">
         <div class="row gy-4">
           <div class="col-sm-6 col-md-4" v-for="(image, index) in filteredGalleryImages" :key="index">
             <gallery-image :imagePath="image.path" :blurHash="image.blurHash" :alt="image.alt" :caption="image.caption"
@@ -47,6 +53,7 @@
 <script>
 import AboutTheArtist from "./components/AboutTheArtist.vue";
 import GalleryImage from "./components/GalleryImage.vue";
+import SplashCard from "./components/SplashCard.vue";
 import images from "@/data/updatedImages.js"
 import * as bootstrap from 'bootstrap';
 import { nextTick } from 'vue';
@@ -56,6 +63,7 @@ window.bootstrap = bootstrap;
 export default {
   name: "home",
   components: {
+    SplashCard,
     AboutTheArtist,
     GalleryImage,
   },

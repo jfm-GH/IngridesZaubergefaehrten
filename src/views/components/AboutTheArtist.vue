@@ -5,27 +5,32 @@
         <h6>Über die Künstlerin</h6>
       </div>
 
-      <div class="artist-info">
-
-        <div v-if="image">
+      <!-- Grid Row -->
+      <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-6 col-sm-12" v-if="image">
           <gallery-image :imagePath="image.path" :blurHash="image.blurHash" :alt="image.alt" :caption="image.caption" />
         </div>
 
-        <h5 class="card-subtitle mb-2 text-muted">Ingride Mateen</h5>
-        <p class="text-s text-secondary mb-2">Email: <a
-            href="mailto:IngrideTheArtist@gmail.com">IngrideTheArtist@gmail.com</a></p>
-        <p class="text-s text-secondary mb-2">Telefon: <a href="tel:+49176123456">123-456-7890</a></p>
-        <p class="text-s text-secondary mb-2">Ort: 33332 Gütersloh, Deutschland</p>
-      </div>
-      <div class="artist-bio">
-        <p class="text-s">
-          Brief biography or statement from the artist. This could include the artist's inspiration, style, achievements,
-          or any other relevant information that introduces the artist to the website visitors.
-        </p>
+        <!-- Text Column -->
+        <div class="col-md-6 col-sm-12">
+          <div class="artist-info">
+            <h5 class="card-subtitle mb-2 text-muted">Ingride Mateen</h5>
+            <p class="text-s text-secondary mb-2">Email: <a href="mailto:IngrideTheArtist@gmail.com">IngrideTheArtist@gmail.com</a></p>
+            <p class="text-s text-secondary mb-2">Telefon: <a href="tel:+49176123456">123-456-7890</a></p>
+            <p class="text-s text-secondary mb-2">Ort: 33332 Gütersloh, Deutschland</p>
+          </div>
+          <div class="artist-bio">
+            <p class="text-s">
+              Brief biography or statement from the artist. This could include the artist's inspiration, style, achievements, or any other relevant information that introduces the artist to the website visitors.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
   
 <script>
 

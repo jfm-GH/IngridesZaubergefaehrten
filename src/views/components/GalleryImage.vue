@@ -39,7 +39,10 @@ export default {
 
       // Convert canvas to data URL and set as background
       const dataUrl = canvas.toDataURL();
-      this.backgroundStyle = { "backgroundImage": `url(${dataUrl})` };
+      this.backgroundStyle = { "backgroundImage": `url(${dataUrl})`,
+        "width": "291px",
+        "height": "388px"
+       };
     },
     onImageLoad() {
       this.imageLoaded = true;
@@ -70,8 +73,6 @@ export default {
   .gallery-item .gallery-image {
     /* Style for the images in the gallery */
     border-radius: 5px; /* Example style */
-    width: 291px;
-    height: 388px;
     display: block;
     background-size: cover;
     background-position: center;
