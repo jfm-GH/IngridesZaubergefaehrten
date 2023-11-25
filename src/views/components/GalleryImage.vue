@@ -6,7 +6,7 @@
 
       <!-- Actual Image -->
       <div class="gallery-image" :style="backgroundStyle">
-        <img v-on="imageLoaded" :src="imagePath" :alt="alt" class="img-fluid clickable lazy" @load="onImageLoad" />
+        <img :src="imagePath" :alt="alt" class="img-fluid clickable lazy" @load="onImageLoad" />
         <p class="caption">{{ caption }}</p> <!-- Optional: Display caption -->
       </div>
     </div>
@@ -48,9 +48,7 @@
 
         // Convert canvas to data URL and set as background
         const dataUrl = canvas.toDataURL();
-        //console.log(dataUrl);
         this.backgroundStyle = { "backgroundImage": `url(${dataUrl})` };
-        console.log(this.backgroundStyle);
       },
       onImageLoad() {
         this.imageLoaded = true;
