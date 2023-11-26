@@ -7,7 +7,7 @@
   "scripts": {
     "encode-blur-hash": "node ./src/scripts/encodeBlurHash.js",
     "prebuild": "node ./src/scripts/prebuild.js --build",
-    "preserve": "node ./scripts/prebuild.js",
+    "preserve": "node ./src/scripts/prebuild.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "postbuild": "node ./src/scripts/postbuild.js",
