@@ -101,7 +101,7 @@ const images = [
     },
     {
       path: img12,
-      blurHash: "",
+      blurHash: "UXLD[J^+.SIp~qW?9Zs,o}RjROxtt8e:jZkD",
       alt: "Image of Artist",
       caption: "Ingride",
       category: "AboutTheArtist",

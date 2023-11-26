@@ -33,4 +33,8 @@ This step makes gh-pages a subtree of our master branch. The prefix option speci
 ### Step 5. Done
 In a few minutes, GitHub Pages should refresh with your newest repository changes, and you should be able to see your Vue project online. Exciting!
 
+### Step 6. Repeat step 4 to update gh-pages
+To resolve the 404 error that occurs when reloading a page on gh-pages, run
+"npm run deploy" before running "git subtree push --prefix dist origin gh-pages".
+
 
