@@ -6,6 +6,8 @@ Docs & License: https://fullcalendar.io/
 
 // Creative Tim Changes
 
+@use "sass:math";
+
 .fc-theme-standard .fc-scrollgrid,
 .fc-scrollgrid {
   border: none;
@@ -67,7 +69,7 @@ Docs & License: https://fullcalendar.io/
 
 .fc .fc-button{
   font-size: $font-size-sm;
-  padding-top: $spacer/4;
+  padding-top: math.div($spacer, 4);
   box-shadow: $btn-box-shadow;
   transition: $btn-transition;
   .fc-icon{
