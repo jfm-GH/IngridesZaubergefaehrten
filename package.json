@@ -8,7 +8,8 @@
     "encode-blur-hash": "node ./src/scripts/encodeBlurHash.js",
     "serve": "node ./src/scripts/reminderMsg-prebuild.js && vue-cli-service serve",
     "build": "node ./src/scripts/reminderMsg-prebuild.js && vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "cd dist && cp index.html 404.html"
   },
   "keywords": [
     "uibuilder",
