@@ -221,7 +221,6 @@ export default {
     ...mapActions(["toggleSidebarColor"]),
 
     toggleSidebar() {
-      this.toggleSidebarColor("bg-white");
       this.navbarMinimize();
     }
   },

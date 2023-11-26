@@ -24,12 +24,12 @@ export default {
 </script>
 <style scoped>
 .bg-splash {
-  background-image: url('../../assets/img/gallery-images/Header.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  width: 100vw;
+  background-image: url('../../assets/img/gallery-images/Header.png') !important;
+  background-size: cover !important;
+  background-position: center !important;;
+  background-repeat: no-repeat !important;;
+  height: 100vh !important;;
+  width: 100vw !important;;
   margin: 0;
   padding: 0;
 }

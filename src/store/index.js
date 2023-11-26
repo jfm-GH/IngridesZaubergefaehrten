@@ -5,7 +5,7 @@ export default createStore({
     hideConfigButton: false,
     isPinned: true,
     showConfig: false,
-    sidebarType: "bg-white",
+    sidebarType: "bg-default",
     isRTL: false,
     mcolor: "",
     darkMode: false,
@@ -16,7 +16,8 @@ export default createStore({
     showNavbar: true,
     showFooter: true,
     showMain: true,
-    layout: "default"
+    layout: "default",
+    isTransparent: null,
   },
   mutations: {
     toggleConfigurator(state) {

@@ -41,6 +41,7 @@ import Configurator from "@/examples/Configurator.vue";
 import Navbar from "@/examples/Navbars/Navbar.vue";
 import AppFooter from "@/examples/Footer.vue";
 import { mapMutations } from "vuex";
+import { activateDarkMode } from "@/assets/js/dark-mode";
 
 export default {
   name: "App",
@@ -68,6 +69,8 @@ export default {
   },
   beforeMount() {
     this.$store.state.isTransparent = "bg-transparent";
+    this.$store.state.darkMode = true;
+    activateDarkMode();
   }
 };
 </script>

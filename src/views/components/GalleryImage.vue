@@ -11,7 +11,7 @@
 import { decode } from 'blurhash';
 
 export default {
-  name: 'GalleryComponent',
+  name: 'GalleryImage',
   props: {
   imagePath: String,
   blurHash: String,
@@ -60,7 +60,7 @@ export default {
   }
 
   .gallery-item .clickable {
-  cursor: zoom-in; /* This will change the cursor to a pointer when hovering over the image */
+    cursor: pointer;
   }
   
   .gallery-item img {
