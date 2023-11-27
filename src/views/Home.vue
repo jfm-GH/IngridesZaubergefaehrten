@@ -1,9 +1,10 @@
 <template>
   
+
   <div class="mb-2">
-      <splash-card />
+    <splash-card />
   </div>
-  
+
   <div class="py-4 container-fluid">
     
     <!-- Main row -->

@@ -46,7 +46,7 @@ export default {
     },
     onImageLoad() {
       this.imageLoaded = true;
-      console.log('Image loaded');
+      //console.log('Image loaded');
       this.backgroundStyle = {}; // Clear the background style
     }
   }

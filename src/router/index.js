@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Billing from "../views/Billing.vue";
 import VirtualReality from "../views/VirtualReality.vue";
 import RTL from "../views/Rtl.vue";
+import OnePageApp from "../views/OnePageApp.vue";
 
 const routes = [
   {
@@ -29,6 +30,11 @@ const routes = [
     path: "/rtl-page",
     name: "RTL",
     component: RTL,
+  },  
+  {
+    path: "/one-page-app",
+    name: "OnePageApp",
+    component: OnePageApp,
   },  
 ];
 
