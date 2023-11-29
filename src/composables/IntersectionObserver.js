@@ -1,10 +1,13 @@
 /**
+ * Sets up an Intersection Observer on the specified element. When the element intersects,
+ * the callback is triggered.
+ *
  * @function onIntersect
- * @param  {HTMLElement} elementToWatch elementToWatch
- * @param  {function} callback       callback once element is intersecting
- * @param  {Boolean} once           if callback only run one time
- * @param  {Object} options        Intersection Observer API options
- * @return {type} observer
+ * @param  {HTMLElement} elementToWatch - The element to observe. If not provided, the shown image will not be displayed.
+ * @param  {function} callback - Callback function to execute when the element is intersecting.
+ * @param  {Boolean} [once=true] - If true, the callback will only run once.
+ * @param  {Object} [options={ threshold: 1 }] - Intersection Observer API options.
+ * @return {IntersectionObserver} - The created Intersection Observer instance.
  */
 export const onIntersect = (
     elementToWatch,

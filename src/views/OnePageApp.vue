@@ -1,5 +1,4 @@
 <template>
-
   <!-- TESTING -->
   <div class="imgs">
     <img
@@ -61,10 +60,9 @@
 
   <section class="full-screen-section">
     <div data-img-to-show=""></div>
-
   </section>
+  
   <div class="py-4 container-fluid">
-    
     <!-- Main row -->
     <div class="row">
       <!-- Artist Info Wrapper -->
@@ -201,6 +199,14 @@ export default {
         alert('Ihr Browser unterstützt das Teilen via Web Share API nicht.');
       }
     },
+
+  /**
+  * Method that serves as callback function to execute when the element is intersecting.
+  * if an empty string is passed as target, the function will remove the class "show" from all images.
+  * e.g. by setting the data-img-to-show attribute to an empty string.
+  * @method setImageVisibility
+  * @param  {HTMLElement} target - The element that is intersecting.
+  */
     setImageVisibility(target) {
       console.log("setImageVisibility");
       console.log("target", target);
