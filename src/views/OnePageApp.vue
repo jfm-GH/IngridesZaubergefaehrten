@@ -1,6 +1,5 @@
 <template>
 
-  
   <!-- TESTING -->
   <div class="imgs">
     <img
@@ -60,7 +59,10 @@
   </section>
   <!-- END TESTING -->
 
+  <section class="full-screen-section">
+    <div data-img-to-show=""></div>
 
+  </section>
   <div class="py-4 container-fluid">
     
     <!-- Main row -->
@@ -201,10 +203,13 @@ export default {
     },
     setImageVisibility(target) {
       console.log("setImageVisibility");
-      console.log("entry", target);
+      console.log("target", target);
       document.querySelectorAll("[data-img]").forEach(img => {
         img.classList.remove("show")
       })
+      // if no target is set, do nothing
+      // -> serves to remove the class "show" from all images
+      if (target.dataset.imgToShow === '') return
       const img = document.querySelector(target.dataset.imgToShow)
       img?.classList.add("show")
     },
