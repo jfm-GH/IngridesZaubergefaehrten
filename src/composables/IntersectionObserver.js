@@ -42,6 +42,7 @@ export const onIntersect = (
     return observer;
   };
 
+  /*
 export function toggleImageVisibility(entry) {
     console.log("called toggleImageVisibility");
     console.log("entry", entry);
@@ -51,3 +52,4 @@ export function toggleImageVisibility(entry) {
   const img = document.querySelector(entry.target.dataset.imgToShow)
   img?.classList.add("show")
 }
+*/
