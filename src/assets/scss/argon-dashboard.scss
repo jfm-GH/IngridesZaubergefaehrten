@@ -26,5 +26,10 @@
 // Theme Core
 @import "argon-dashboard/theme-pro";
 
-// Custom Variables
+// Custom Styles
 @import "argon-dashboard/custom/styles";
+
+
+// animate-sass package
+@import "../../../node_modules/animate-sass/animate"
+

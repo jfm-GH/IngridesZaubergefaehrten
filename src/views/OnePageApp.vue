@@ -15,11 +15,15 @@
 
   <section class="top-section full-screen-section">
     <div class="left">
-      <h1>Ingride's Zaubergefährten</h1>
+      <h1 class="animated fadeInDown">Ingride's Zaubergefährten</h1>
       <p>
         Zaubergefährten aus Ton in leidenschaftlicher Handarbeit gefertigt.
       </p>
     </div>
+    <argon-avatar
+      class="w-30 mt-2"
+      :img="splash2"
+      alt="logo" />
     <div class="right"></div>
   </section>
 
@@ -41,7 +45,18 @@
   <section class="full-screen-section">
     <h1>Launch Faster</h1>
     <p>Logical can get systems to market in minutes instead of weeks.</p>
-    <div data-img-to-show="#img-3"></div>
+    <!--<div data-img-to-show="#img-3"></div>-->
+  </section>
+
+  <section class="full-screen-section">
+    <h1>Testing avatar</h1>
+    <p>Will it hold up?</p>
+    <div class="fadeIn4">
+      <argon-avatar
+        class="w-30 mt-2"
+        :img="splash2"
+        alt="logo" />
+    </div>
   </section>
   <!-- END TESTING -->
 
@@ -51,8 +66,8 @@
     <!-- Main row -->
     <div class="row">
       <!-- Artist Info Wrapper -->
-      <div class="col-lg-6 col-md-12 artist-wrapper">
-        <div class="about-artist-sticky ">
+      <div class="col-lg-6 col-md-12">
+        <div class="sticky-top">
           <about-the-artist :image="filteredArtistImage" />
         </div>
       </div>
@@ -79,9 +94,12 @@
           <div class="modal-body">
             <img :src="currentImage.path" class="img-fluid" :alt="currentImage.alt" v-touch:swipe.left="goToNextImage"
               v-touch:swipe.right="goToPreviousImage">
-            <!-- Navigation buttons -->
-            <button class="modal-navigation-btn left" @click="goToPreviousImage">&#10094;</button>
-            <button class="modal-navigation-btn right" @click="goToNextImage">&#10095;</button>
+            <!-- Modal Navigation Buttons -->
+            <button class="btn btn-primary position-absolute top-50 translate-middle-y fs-4 text-white bg-transparent border-0"
+              style="left: 10px;" @click="goToPreviousImage">&#10094;</button>
+
+            <button class="btn btn-primary position-absolute top-50 translate-middle-y fs-4 text-white bg-transparent border-0"
+              style="right: 10px;" @click="goToNextImage">&#10095;</button>
             <!-- Share button -->
             <button class="btn btn-primary mt-2" @click="shareImage">Teilen</button>
           </div>
@@ -95,6 +113,7 @@
 <script>
 import AboutTheArtist from "./components/AboutTheArtist.vue";
 import GalleryImage from "./components/GalleryImage.vue";
+import ArgonAvatar from "../components/ArgonAvatar.vue";
 import images from "@/data/updatedImages.js"
 import * as bootstrap from 'bootstrap';
 import { nextTick } from 'vue';
@@ -117,6 +136,7 @@ export default {
   components: {
     AboutTheArtist,
     GalleryImage,
+    ArgonAvatar,
   },
   data() {
     return {
@@ -191,60 +211,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.artist-wrapper {
-  position: relative;
-}
-
-.about-artist-sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20px;
-  /* Adjust based on your header/nav bar height */
-}
-
-/* Custom modal styling */
-.modal-dialog {
-  max-height: 80vh;
-  display: flex;
-  align-items: center;
-  /* This centers the modal vertically */
-  margin: 0 auto;
-}
-
-.modal-content {
-  height: auto;
-  /* Adjust height automatically */
-  max-height: 80vh;
-  /* Maximum height */
-  overflow-y: auto;
-  /* Enable scrolling if content is larger than the modal */
-}
-
-.modal-body img {
-  max-height: 70vh;
-  /* Adjust the image height to be less than the modal to fit nicely */
-  width: auto;
-  /* Maintain aspect ratio */
-}
-
-.modal-navigation-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  color: white;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.modal-navigation-btn.left {
-  left: 10px;
-}
-
-.modal-navigation-btn.right {
-  right: 10px;
-}</style>
-
